@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Change rsync Destination</title>
+</head>
+<body>
+    <h1>Change rsync Destination</h1>
+    <p>Current destination: {{ current_destination }}</p>
+    <form method="POST" action="{{ url_for('change_destination') }}">
+        <label for="destination">Select new destination:</label>
+        <select id="destination" name="destination">
+            {% for destination in destinations %}
+            <option value="{{ destination }}">{{ destination }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Change</button>
+    </form>
+</body>
+</html>
+
